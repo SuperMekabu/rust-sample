@@ -1,7 +1,7 @@
 use std::ops::RangeInclusive;
 
-pub fn range(len: i32) -> RangeInclusive<i32> {
-    return 1..=len;
+pub fn range<T>(from: T, to: T) -> RangeInclusive<T> {
+    return from..=to;
 }
 
 #[cfg(test)]
@@ -10,9 +10,9 @@ mod tests {
 
     #[test]
     fn test_range() {
-        assert_eq!(range(100).min().unwrap(), 1);
-        assert_eq!(range(100).last().unwrap(), 100);
-        assert_ne!(range(100).last().unwrap(), 99);
-        assert_ne!(range(100).last().unwrap(), 101);
+        assert_eq!(range(1, 100).min().unwrap(), 1);
+        assert_eq!(range(1, 100).last().unwrap(), 100);
+        assert_ne!(range(1, 100).last().unwrap(), 99);
+        assert_ne!(range(1, 100).last().unwrap(), 101);
     }
 }
