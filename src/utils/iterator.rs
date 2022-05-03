@@ -1,7 +1,7 @@
 use std::ops::RangeInclusive;
 
-pub fn range<T>(from: T, to: T) -> RangeInclusive<T> {
-    return from..=to;
+pub fn range<T>(from: T, until: T) -> RangeInclusive<T> {
+    return from..=until;
 }
 
 #[cfg(test)]
